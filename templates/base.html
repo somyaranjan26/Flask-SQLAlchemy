@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .about::-webkit-scrollbar {
+      display: none;
+      }
+    </style>
+
+    <title>Flask Assignment</title>
+</head>
+<body class="bg-gray-50 ">
+    <header class="bg-white fixed z-10 w-full text-gray-600 body-font border border-b">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <span class="ml-3 text-xl">Flask + SQLAlchemy</span>
+          </a>
+          <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a href="{{ url_for('index') }}" class="mr-5 hover:text-gray-900">Home</a>
+            <a href="{{ url_for('create') }}" class="mr-5 hover:text-gray-900">Create</a>
+            <a href="{{ url_for('about') }}" class="mr-5 hover:text-gray-900">About</a>
+          </nav>
+        </div>
+      </header>
+      <div class="pt-20 container mx-auto">
+        {% block body %} 
+
+        {% endblock %}
+      </div>
+      <footer class="container mx-auto text-gray-600 body-font">
+        <div class="px-4 lg:px-60 py-8 flex items-center sm:flex-row flex-col border border-t fixed bottom-0 left-0 right-0 bg-white z-10 w-full">
+          <p class="text-sm text-gray-500 sm:text-center sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0 mt-4">© 2022 Advanced Database Systems: Theory and Programming —
+            <a href="https://www.linkedin.com/in/somyaranjanrout/" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Somyaranjan Rout</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a href="https://www.linkedin.com/in/somyaranjanrout/" class="ml-3 text-black">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+            <a href="https://github.com/somyaranjan26" class="ml-3 text-gray-500">
+              <svg viewBox="0 0 98 96" width="23" height="21" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"/>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </footer>
+</body>
+</html>
