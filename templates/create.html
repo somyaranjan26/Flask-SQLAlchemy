@@ -15,7 +15,7 @@
                 <label for="firstname" class="block text-sm font-medium text-gray-700"> First name </label>
                 <div class="mt-1">
                   <input type="text" name="firstname" id="firstname" autocomplete="given-name" 
-                  value={{ student.firstname }}
+                  value="{{ student.firstname if student else ' ' }}"
                   class="p-1.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md">
                 </div>
               </div>
@@ -24,7 +24,7 @@
                 <label for="lastname" class="block text-sm font-medium text-gray-700"> Last name </label>
                 <div class="mt-1">
                   <input type="text" name="lastname" id="lastname" autocomplete="family-name"
-                  value={{ student.lastname }}
+                  value="{{ student.lastname if student else ' ' }}"
                   class="p-1.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md">
                 </div>
               </div>
@@ -33,7 +33,7 @@
                 <label for="email" class="block text-sm font-medium text-gray-700"> Email address </label>
                 <div class="mt-1">
                   <input id="email" name="email" type="email" autocomplete="email"
-                  value={{ student.email }}
+                  value="{{ student.email if student else ' '  }}"
                   class="p-1.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md">
                 </div>
               </div>
@@ -42,7 +42,7 @@
                 <label for="age" class="block text-sm font-medium text-gray-700"> Age </label>
                 <div class="mt-1">
                   <input type="number" name="age" id="age" autocomplete="age"
-                  value={{ student.age }} 
+                  value="{{ student.age if student else ' '  }}"
                   class="p-1.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md">
                 </div>
               </div>
@@ -51,7 +51,7 @@
               <div class="sm:col-span-6">
                 <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
                 <div class="mt-1">
-                  <textarea id="about" name="about" rows="3" class="p-1.5 block w-full sm:text-sm shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md">{{ student.about }}</textarea>
+                  <textarea id="about" name="about" rows="3" class="p-1.5 block w-full sm:text-sm shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md">{{ student.about if student else ' '  }}</textarea>
                 </div>
                 <p class="mt-2 text-sm text-gray-500">Write a few sentences about yourself.</p>
               </div>

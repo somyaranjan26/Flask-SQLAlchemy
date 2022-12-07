@@ -59,6 +59,7 @@ def create():
         db.session.commit()
     
         return redirect(url_for('index'))
+    
 
     return render_template("create.html")
 
