@@ -5,44 +5,69 @@
 <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-20">
-          <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>
-          <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Master Cleanse Reliac Heirloom</h1>
+          <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">PYTHON FlASK</h2>
+          <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Custom Middlewares</h1>
     </div>
-    <div class="container px-5 py-24 mx-auto">
+    <div class="container px-5 mx-auto">
       <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-          <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Shooting Stars</h2>
-          <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-          <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+        <div class="flex-grow text-left mt-6 sm:mt-0">
+          <p class="leading-relaxed text-lg">
+            In web development with the Python Flask framework, middlewares are functions executed before and after a request is handled by a route. Flask allows us to define custom middleware, which can be helpful for various purposes such as authentication, logging, and more.
+          </p>
+          <p class="leading-relaxed text-lg mt-2">
+            To create a custom middleware, we can define a function that takes in three arguments:
+          </p>
+          <div class="leading-relaxed text-lg ml-5">
+            <li>The current request object.</li>
+            <li>The response object.</li>
+            <li>A function that represents the next step in the request-response cycle.</li>
+          </div>
+          <div class="block mt-4 p-6 bg-white border rounded-lg shadow-md bg-gray-800 border-gray-700 hover:bg-gray-900">
+            <code class="font-normal text-gray-700 dark:text-gray-400">
+              <span class="text-white">from flask import request</span>
+              <br><br>
+              <span class="text-white">def my_middleware(request, response, next_function):</span> <br>
+              <div class="ml-5">
+                # Do something before the next step in the request-response cycle <br>
+                <span class="text-white">next_function()</span> <br>
+                # Do something after the next step in the request-response cycle <br>
+              </div>
+            </code>
+        </div>
         </div>
       </div>
       <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-          <h2 class="text-gray-900 text-lg title-font font-medium mb-2">The Catalyzer</h2>
-          <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-          <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+        <div class="flex-grow text-left mt-6 sm:mt-0">
+          <p class="leading-relaxed text-lg">
+            Once we have defined our middleware function, we can add it to our Flask application using the <code>app.add_middleware()</code> method. Here's an example of how to method to add middleware to the Flask app:
+          </p>
+          <div class="block mt-4 p-6 bg-white border rounded-lg shadow-md bg-gray-800 border-gray-700 hover:bg-gray-900">
+            <code class="font-normal text-gray-700 dark:text-gray-400">
+              <span class="text-white">from flask import Flask</span>
+              <br><br>
+              <span class="text-white">app = Flask(__name__)</span> <br> <br>
+              # Add the middleware to the Flask app <br>
+              <span class="text-white">app.add_middleware(my_middleware)</span>
+            </code>
+        </div>
         </div>
       </div>
-      <div class="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
-        <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-          <h2 class="text-gray-900 text-lg title-font font-medium mb-2">The 400 Blows</h2>
-          <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-          <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+      <div class="flex items-center lg:w-3/5 mx-auto pb-10 mb-10 sm:flex-row flex-col">
+        <div class="flex-grow text-left mt-6 sm:mt-0">
+          <p class="leading-relaxed text-lg">
+            We can also specify the order in which middleware is executed by passing an optional index argument to the <code>add_middleware()</code> method. Middleware with a lower index will be executed before those with a higher index. For example:
+          </p>
+          <div class="block mt-4 p-6 bg-white border rounded-lg shadow-md bg-gray-800 border-gray-700 hover:bg-gray-900">
+            <code class="font-normal text-gray-700 dark:text-gray-400">
+              # Add the middleware to the Flask app with an index of 1 <br>
+              <span class="text-white">app.add_middleware(my_middleware, index=1)</span>
+            </code>
+        </div>
+        <p class="leading-relaxed text-lg mt-5">
+            Remember that the order in which middleware is executed can be significant, so carefully consider the index values we assign to middleware.
+        </p>
         </div>
       </div>
-      <button class="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
     </div>
   </section>
 
